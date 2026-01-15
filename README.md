@@ -5,11 +5,10 @@ How to use it:
 Step 1 :
 ---
   First choice the series, enter 1 for individual series, enter 2 for discrete series, enter 3 for continuous series, then enter the series.
-  <bar>
+ ---
 Step 2 :
----
   Choice whict one you want to calculate, Enter the list no. to calculate.
-  ---
+---
 Step 3 :
 ---
   If you want continue with the same series, enter y.
