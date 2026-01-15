@@ -670,7 +670,7 @@ int main()
 {
     printf("                                               Welcome!\n");
     printf("==========================================================================================================\n");
-    printf("                                       Statistical Calculator\n");
+    printf("                                     Statistical Calculator V1.O\n");
     printf("==========================================================================================================\n");
 
     printf("\n# MEASURES OF CENTRAL TENDENCY :                                   # MEASURES OF DISPERSION :       \n");
@@ -678,7 +678,7 @@ int main()
     printf("       2. Median.                                                      5. Interquartile Deviation(IQD)");
     printf("\n       3. Mode.                                                          & Quartile Deviation(QD) \n");
     printf("                                                                       6. Mean Deviation. \n");
-    printf("                                                                       7. Standard Deviation\n");
+    printf("                                                                       7. Standard Deviation & Variance\n");
     printf("\n==========================================================================================================\n");
     printf("     NOTE : Before calculating enter the serise.....");
     printf("\n==========================================================================================================\n");
@@ -806,7 +806,7 @@ int main()
                 printf("%d ", f[i]);
         }
         printf("\n==========================================================================================================\n");
-        printf("                                       Statistical Calculator\n");
+        printf("                                      Statistical Calculator V1.O\n");
         printf("==========================================================================================================\n");
 
         printf("\n# MEASURES OF CENTRAL TENDENCY :                                   # MEASURES OF DISPERSION :       \n");
@@ -814,7 +814,7 @@ int main()
         printf("       2. Median.                                                      5. Interquartile Deviation(IQD)");
         printf("\n       3. Mode.                                                          & Quartile Deviation(QD) \n");
         printf("                                                                       6. Mean Deviation. \n");
-        printf("                                                                       7. Standard Deviation\n");
+        printf("                                                                       7. Standard Deviation & Variance\n");
         printf("\n==========================================================================================================\n");
         printf("\nwhich one do you want to calculate : ");
         scanf("%d", &choice2);
