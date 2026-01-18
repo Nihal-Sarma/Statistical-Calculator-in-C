@@ -552,7 +552,7 @@ void indiv_MD(float *MDx, float *MDm, float *CMDx, float *CMDm, int x[], int n, 
         sum2 += fabs(x[i] - median);
     }
     *MDx = sum / n;
-    *MDm = sum / n;
+    *MDm = sum2 / n;
     *CMDx = (mean != 0) ? (*MDx / mean) : 0;
     *CMDm = (median != 0) ? (*MDm / median) : 0;
 }
