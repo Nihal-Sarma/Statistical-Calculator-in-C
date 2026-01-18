@@ -147,11 +147,12 @@ int discr_Median(int x[], int f[], int n, bool *mark)
         printf("========================================================\n");
     }
     int *cf = malloc(n * sizeof(int));
-    int temp = 0, median;
+    int median;
+    cf[0] = f[0];
     for (int i = 0; i < n; i++)
     {
-        temp += f[i];
-        cf[i] = temp;
+        if(i > 0)
+            cf[i] = cf[i - 1] + f[i];
         if (*mark == true)
             printf("      %d                  %d                   %d\n", x[i], f[i], cf[i]);
     }
@@ -180,10 +181,10 @@ float conti_Median(int l[], int u[], int f[], int n, bool *mark)
     }
     int temp = 0;
     int *cf = malloc(n * sizeof(int));
-    for (int i = 0; i < n; i++)
+    cf[0] = f[0];
+    for (int i = 1; i < n; i++)
     {
-        temp += f[i];
-        cf[i] = temp;
+            cf[i] = cf[i - 1] + f[i];
     }
     float Nd2 = cf[n - 1] / 2.0, h;
     int L, cf1, f1;
@@ -453,14 +454,14 @@ void discr_Q(float *SIQD, float *SQD, float *CV, int x[], int f[], int n)
     printf("                          Calculate QD & IQD\n");
     printf("==========================================================================\n");
     printf("                                                          Discrete serise:\n");
-    int temp = 0;
     int *cf = malloc(n * sizeof(int));
     printf("\n       X               F                CF\n");
     printf("=================================================\n");
+    cf[0] = f[0];
     for (int i = 0; i < n; i++)
     {
-        temp += f[i];
-        cf[i] = temp;
+        if(i > 0)
+            cf[i] = cf[i - 1] + f[i];
         printf("      %d               %d                %d\n", x[i], f[i], cf[i]);
     }
     int N = cf[n - 1];
@@ -494,14 +495,15 @@ void conti_Q(float *SIQD, float *SQD, float *CV, int l[], int u[], int f[], int 
     printf("                          Calculate QD & IQD\n");
     printf("==========================================================================\n");
     printf("                                                        Continuous serise:\n");
-    int h, temp = 0;
+    int h;
     int *cf = malloc(n * sizeof(int));
     printf("\n       C.I              F                CF\n");
     printf("==================================================\n");
+    cf[0] = f[0];
     for (int i = 0; i < n; i++)
     {
-        temp += f[i];
-        cf[i] = temp;
+        if(i > 0)
+            cf[i] = cf[i - 1] + f[i];
         printf("     %d - %d            %d                %d\n", l[i], u[i], f[i], cf[i]);
     }
     float Nd4 = cf[n - 1] / 4.0;
@@ -670,7 +672,7 @@ int main()
 {
     printf("                                               Welcome!\n");
     printf("==========================================================================================================\n");
-    printf("                                     Statistical Calculator V1.O\n");
+    printf("                                       Statistical Calculator\n");
     printf("==========================================================================================================\n");
 
     printf("\n# MEASURES OF CENTRAL TENDENCY :                                   # MEASURES OF DISPERSION :       \n");
@@ -678,7 +680,7 @@ int main()
     printf("       2. Median.                                                      5. Interquartile Deviation(IQD)");
     printf("\n       3. Mode.                                                          & Quartile Deviation(QD) \n");
     printf("                                                                       6. Mean Deviation. \n");
-    printf("                                                                       7. Standard Deviation & Variance\n");
+    printf("                                                                       7. Standard Deviation\n");
     printf("\n==========================================================================================================\n");
     printf("     NOTE : Before calculating enter the serise.....");
     printf("\n==========================================================================================================\n");
@@ -806,7 +808,7 @@ int main()
                 printf("%d ", f[i]);
         }
         printf("\n==========================================================================================================\n");
-        printf("                                      Statistical Calculator V1.O\n");
+        printf("                                       Statistical Calculator\n");
         printf("==========================================================================================================\n");
 
         printf("\n# MEASURES OF CENTRAL TENDENCY :                                   # MEASURES OF DISPERSION :       \n");
@@ -814,7 +816,7 @@ int main()
         printf("       2. Median.                                                      5. Interquartile Deviation(IQD)");
         printf("\n       3. Mode.                                                          & Quartile Deviation(QD) \n");
         printf("                                                                       6. Mean Deviation. \n");
-        printf("                                                                       7. Standard Deviation & Variance\n");
+        printf("                                                                       7. Standard Deviation\n");
         printf("\n==========================================================================================================\n");
         printf("\nwhich one do you want to calculate : ");
         scanf("%d", &choice2);
